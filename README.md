@@ -27,24 +27,24 @@ Here is a long read about the date-time reform proposal:
 <https://github.com/LucianoBestia/new_date_time_units_and_formats/>
 
 A super short explanation:  
-Months are obsolete and they are not used in the new format.
-Years remain the same.
+Months are obsolete and they are not used in the new format.  
+Years remain the same.  
 Veek is similar to week. One year has 52 full veeks with 7 days.  
-The exception is the last 53rd veek that has only 1 celebration days. For leap years there are 2 celebration days.  
+The exception is the last 53rd veek that has only 1 celebration day. For leap years there are 2 celebration days.  
 The new year always starts with `01v 1d` - short pronunciation one-vee one-dee. Basically every year starts with a monday.  
 Veek-days are similar to week-days, but without names. They use just numbers and the `d` unit.  
 `1d` is the new name for Monday and `7d` is the new name for Sunday.  
 The veek-date format is global for every language and looks exactly like this: `2021c 52v 2d`  
 The year must have 4 digits from 1000c to 9999c. The unit `c` stands for CE - common era. Space.  
-The veek must have 2 digits from 01c to 53c. The unit `v` stands for veek. Space.  
+The veek must have 2 digits from 01v to 53v. The unit `v` stands for veek. Space.  
 The day must have 1 digit from 1d to 7d. The unit `d` stands for day. End.  
 
 Hours, minutes and seconds are obsolete.  
-One day is divided into 1000md.
+One day is divided into 1000md.  
 Millis is the short name for milliday. The unit is `md`.  
-For shorter time intervals there is microdays or micros, unit `μd`. `1md` has `1000μd`.
+For shorter time intervals there is microdays or micros, unit `μd`. `1md` has `1000μd`.  
 
-This crate contains functions to use with the new units veeks and millis.
+This crate contains functions to use with the new units veeks and millis.  
 It is dependent on the crate `chrono` for `NaiveDate` and `NaiveTime`.  
 
 ## Used in projects
