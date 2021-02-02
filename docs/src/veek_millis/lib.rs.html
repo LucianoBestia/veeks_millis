@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings"></script><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="alternate icon" type="image/png" href="../../favicon-16x16.png">
+<link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../veek_millis/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices" role="menu"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><span class="help-button">?</span>
+                <a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+</pre><div class="example-wrap"><pre class="rust ">
+<span class="comment">// region: lmake_md_to_doc_comments include README.md A //!</span>
+<span class="doccomment">//! # veek_millis</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! **2021 new date time units and formats: veeks and millis**  </span>
+<span class="doccomment">//! ***[repo](https://github.com/LucianoBestia/veek_millis); version: 0.5.4  date: 2021-02-02 authors: Luciano Bestia***  </span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//!  [![crates.io](https://meritbadge.herokuapp.com/veek_millis)](https://crates.io/crates/veek_millis) [![Documentation](https://docs.rs/veek_millis/badge.svg)](https://docs.rs/veek_millis/) [![crev reviews](https://web.crev.dev/rust-reviews/badge/crev_count/veek_millis.svg)](https://web.crev.dev/rust-reviews/crate/veek_millis/) [![RustActions](https://github.com/LucianoBestia/veek_millis/workflows/rust/badge.svg)](https://github.com/LucianoBestia/veek_millis/) [![latest doc](https://img.shields.io/badge/latest_docs-GitHub-orange.svg)](https://lucianobestia.github.io/veek_millis/veek_millis/index.html) [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/veek_millis/blob/master/LICENSE)</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-79-green.svg)]()</span>
+<span class="doccomment">//! [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-142-blue.svg)]()</span>
+<span class="doccomment">//! [![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-11-purple.svg)]()</span>
+<span class="doccomment">//! [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)]()</span>
+<span class="doccomment">//! [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-88-orange.svg)]()</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! ## Proposal for a new date and time units and formats</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! Veeks and millis are my suggestion for new date-time units and formats.  </span>
+<span class="doccomment">//! Here is a long read about the date-time reform proposal:  </span>
+<span class="doccomment">//! &lt;https://github.com/LucianoBestia/new_date_time_units_and_formats/&gt;</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! A super short explanation:  </span>
+<span class="doccomment">//! Months are obsolete and they are not used in the new format.</span>
+<span class="doccomment">//! Years remain the same.</span>
+<span class="doccomment">//! Veek is similar to week. One year has 52 full veeks with 7 days.  </span>
+<span class="doccomment">//! The exception is the last 53rd veek that has only 1 celebration days. For leap years there are 2 celebration days.  </span>
+<span class="doccomment">//! The new year always starts with `01v 1d` - short pronunciation one-vee one-dee. Basically every year starts with a monday.  </span>
+<span class="doccomment">//! Veek-days are similar to week-days, but without names. They use just numbers and the `d` unit.  </span>
+<span class="doccomment">//! `1d` is the new name for Monday and `7d` is the new name for Sunday.  </span>
+<span class="doccomment">//! The veek-date format is global for every language and looks exactly like this: `2021c 52v 2d`  </span>
+<span class="doccomment">//! The year must have 4 digits from 1000c to 9999c. The unit `c` stands for CE - common era. Space.  </span>
+<span class="doccomment">//! The veek must have 2 digits from 01c to 53c. The unit `v` stands for veek. Space.  </span>
+<span class="doccomment">//! The day must have 1 digit from 1d to 7d. The unit `d` stands for day. End.  </span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! Hours, minutes and seconds are obsolete.  </span>
+<span class="doccomment">//! One day is divided into 1000md.</span>
+<span class="doccomment">//! Millis is the short name for milliday. The unit is `md`.  </span>
+<span class="doccomment">//! For shorter time intervals there is microdays or micros, unit `μd`. `1md` has `1000μd`.</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! This crate contains functions to use with the new units veeks and millis.</span>
+<span class="doccomment">//! It is dependent on the crate `chrono` for `NaiveDate` and `NaiveTime`.  </span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! ## Used in projects</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! &lt;https://github.com/LucianoBestia/new_date_time_units_and_formats/&gt;  </span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! ## cargo crev reviews and advisory</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! It is recommended to always use [cargo-crev](https://github.com/crev-dev/cargo-crev)  </span>
+<span class="doccomment">//! to verify the trustworthiness of each of your dependencies.  </span>
+<span class="doccomment">//! Please, spread this info.  </span>
+<span class="doccomment">//! On the web use this url to read crate reviews. Example:  </span>
+<span class="doccomment">//! &lt;https://web.crev.dev/rust-reviews/crate/num-traits/&gt;  </span>
+<span class="doccomment">//!</span>
+<span class="comment">// endregion: lmake_md_to_doc_comments include README.md A //!</span>
+
+<span class="kw">mod</span> <span class="ident">veeks_millis_mod</span>;
+
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">veeks_millis_mod</span>::<span class="kw-2">*</span>;
+</pre></div>
+</section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../";window.currentCrate = "veek_millis";</script><script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script><script defer src="../../search-index.js"></script></body></html>

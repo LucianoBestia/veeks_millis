@@ -1,0 +1,24 @@
+[package]
+name = "veek_millis"
+version = "0.5.4"
+authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
+edition = "2018"
+description = "2021 new date time units and formats: veeks and millis"
+repository = "https://github.com/LucianoBestia/veek_millis"
+readme = "README.md"
+license = "MIT"
+keywords = ["date","time","veeks","millis"]
+categories = ["date-and-time"]
+# publish as a crates.io library. Only this files.
+publish = true
+include = [
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+    "src/*",
+]
+
+[dependencies]
+unwrap = "1.2.1"
+chrono = "0.4.19"
+regex = "1.4.3"
