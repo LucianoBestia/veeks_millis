@@ -1,4 +1,4 @@
-//! veek_millis_mod
+//! veeks_millis_mod
 
 use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 
@@ -12,7 +12,7 @@ use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 /// let nd = NaiveDate::from_ymd(2021,02,28);
-/// let veeks = veek_millis::naive_date_to_veek_date(nd);
+/// let veeks = veeks_millis::naive_date_to_veek_date(nd);
 /// assert_eq!(veeks,"2021c 09v 3d");
 /// ```
 pub fn naive_date_to_veek_date(nd: NaiveDate) -> String {
@@ -35,7 +35,7 @@ pub fn naive_date_to_veek_date(nd: NaiveDate) -> String {
 ///
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
-/// let nd = veek_millis::veek_to_naive_date_opt("2021c 09v 3d").unwrap();
+/// let nd = veeks_millis::veek_to_naive_date_opt("2021c 09v 3d").unwrap();
 /// assert_eq!(nd, NaiveDate::from_ymd(2021,02,28));
 /// ```
 pub fn veek_to_naive_date_opt(s: &str) -> Option<NaiveDate> {
@@ -60,7 +60,7 @@ pub fn veek_to_naive_date_opt(s: &str) -> Option<NaiveDate> {
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 /// let nt = NaiveTime::from_hms(13,30,00);
-/// let millis = veek_millis::naive_time_to_millis(nt);
+/// let millis = veeks_millis::naive_time_to_millis(nt);
 /// assert_eq!(millis,562.5);
 /// ```
 pub fn naive_time_to_millis(nt: NaiveTime) -> f64 {
@@ -75,7 +75,7 @@ pub fn naive_time_to_millis(nt: NaiveTime) -> f64 {
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
 /// let nt = NaiveTime::from_hms(13,30,00);
-/// let millis = veek_millis::naive_time_to_millis_str(nt);
+/// let millis = veeks_millis::naive_time_to_millis_str(nt);
 /// assert_eq!(millis,"563md");
 /// ```
 pub fn naive_time_to_millis_str(nt: NaiveTime) -> String {
@@ -88,7 +88,7 @@ pub fn naive_time_to_millis_str(nt: NaiveTime) -> String {
 /// # Example
 ///
 /// ```
-/// let millis = veek_millis::millis_from_str_opt("560md").unwrap();
+/// let millis = veeks_millis::millis_from_str_opt("560md").unwrap();
 /// assert_eq!(millis,560.0);
 /// ```
 pub fn millis_from_str_opt(millis: &str) -> Option<f64> {
@@ -115,8 +115,8 @@ pub fn millis_from_str_opt(millis: &str) -> Option<f64> {
 ///
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
-/// let millis = veek_millis::millis_from_str_opt("560md").unwrap();
-/// let nt = veek_millis::millis_to_naive_time_opt(millis).unwrap();
+/// let millis = veeks_millis::millis_from_str_opt("560md").unwrap();
+/// let nt = veeks_millis::millis_to_naive_time_opt(millis).unwrap();
 /// assert_eq!(nt,NaiveTime::from_hms(13,26,24));
 /// ```
 pub fn millis_to_naive_time_opt(millis: f64) -> Option<NaiveTime> {
@@ -128,7 +128,7 @@ pub fn millis_to_naive_time_opt(millis: f64) -> Option<NaiveTime> {
 ///
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
-/// let micros = veek_millis::seconds_to_micros(9.58);
+/// let micros = veeks_millis::seconds_to_micros(9.58);
 /// assert_eq!(micros,110.87962962962962);
 /// ```
 pub fn seconds_to_micros(seconds: f64) -> f64 {
@@ -141,7 +141,7 @@ pub fn seconds_to_micros(seconds: f64) -> f64 {
 ///
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
-/// let micros = veek_millis::micros_from_str_opt("110μd").unwrap();
+/// let micros = veeks_millis::micros_from_str_opt("110μd").unwrap();
 /// assert_eq!(micros,110.0);
 /// ```
 pub fn micros_from_str_opt(micros: &str) -> Option<f64> {
@@ -163,7 +163,7 @@ pub fn micros_from_str_opt(micros: &str) -> Option<f64> {
 ///
 /// ```
 /// use chrono::{Datelike, NaiveDate, NaiveTime, Timelike};
-/// let seconds = veek_millis::micros_to_seconds(110.9);
+/// let seconds = veeks_millis::micros_to_seconds(110.9);
 /// assert_eq!(seconds,9.581760000000001);
 /// ```
 pub fn micros_to_seconds(micros: f64) -> f64 {

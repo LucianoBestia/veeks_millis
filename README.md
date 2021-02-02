@@ -1,22 +1,22 @@
 [comment]: # (lmake_md_to_doc_comments segment start A)
 
-# veek_millis
+# veeks_millis
 
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **2021 new date time units and formats: veeks and millis**  
-***[repo](https://github.com/LucianoBestia/veek_millis); version: 0.5.4  date: 2021-02-02 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/veeks_millis); version: 0.5.5  date: 2021-02-02 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 
- [![crates.io](https://meritbadge.herokuapp.com/veek_millis)](https://crates.io/crates/veek_millis) [![Documentation](https://docs.rs/veek_millis/badge.svg)](https://docs.rs/veek_millis/) [![crev reviews](https://web.crev.dev/rust-reviews/badge/crev_count/veek_millis.svg)](https://web.crev.dev/rust-reviews/crate/veek_millis/) [![RustActions](https://github.com/LucianoBestia/veek_millis/workflows/rust/badge.svg)](https://github.com/LucianoBestia/veek_millis/) [![latest doc](https://img.shields.io/badge/latest_docs-GitHub-orange.svg)](https://lucianobestia.github.io/veek_millis/veek_millis/index.html) [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/veek_millis/blob/master/LICENSE)
+ [![crates.io](https://meritbadge.herokuapp.com/veeks_millis)](https://crates.io/crates/veeks_millis) [![Documentation](https://docs.rs/veeks_millis/badge.svg)](https://docs.rs/veeks_millis/) [![crev reviews](https://web.crev.dev/rust-reviews/badge/crev_count/veeks_millis.svg)](https://web.crev.dev/rust-reviews/crate/veeks_millis/) [![RustActions](https://github.com/LucianoBestia/veeks_millis/workflows/rust/badge.svg)](https://github.com/LucianoBestia/veeks_millis/) [![latest doc](https://img.shields.io/badge/latest_docs-GitHub-orange.svg)](https://lucianobestia.github.io/veeks_millis/veeks_millis/index.html) [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/veeks_millis/blob/master/LICENSE)
 
 [comment]: # (lmake_lines_of_code start)
-[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-79-green.svg)]()
-[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-142-blue.svg)]()
-[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-11-purple.svg)]()
-[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)]()
-[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-88-orange.svg)]()
+[![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-79-green.svg)](https://github.com/LucianoBestia/veeks_millis/)
+[![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-142-blue.svg)](https://github.com/LucianoBestia/veeks_millis/)
+[![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-11-purple.svg)](https://github.com/LucianoBestia/veeks_millis/)
+[![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/veeks_millis/)
+[![Lines in tests](https://img.shields.io/badge/Lines_in_tests-88-orange.svg)](https://github.com/LucianoBestia/veeks_millis/)
 
 [comment]: # (lmake_lines_of_code end)
 
