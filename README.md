@@ -5,7 +5,7 @@
 [comment]: # (lmake_cargo_toml_to_md start)
 
 **2021 new date time units and formats: veeks and millis**  
-***[repo](https://github.com/LucianoBestia/veeks_millis); version: 0.5.6  date: 2021-02-03 authors: Luciano Bestia***  
+***[repo](https://github.com/LucianoBestia/veeks_millis); version: 1.0.2  date: 2021-02-03 authors: Luciano Bestia***  
 
 [comment]: # (lmake_cargo_toml_to_md end)
 

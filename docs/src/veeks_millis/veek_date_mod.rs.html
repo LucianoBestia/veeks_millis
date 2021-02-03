@@ -213,9 +213,9 @@
 <span class="doccomment">/// 1 digit for veek-day from 1d (monday) to 7d(sunday)    </span>
 <span class="doccomment">/// example: `2021c 53v 7d`  </span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">VeekDate</span> {
-    <span class="ident">year</span>: <span class="ident">i32</span>,
-    <span class="ident">veek</span>: <span class="ident">i32</span>,
-    <span class="ident">day</span>: <span class="ident">i32</span>,
+    <span class="ident">year</span>: <span class="ident">u32</span>,
+    <span class="ident">veek</span>: <span class="ident">u32</span>,
+    <span class="ident">day</span>: <span class="ident">u32</span>,
 }
 
 <span class="kw">impl</span> <span class="ident">VeekDate</span> {
@@ -226,7 +226,7 @@
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_yvd(2021,09,3).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.to_string(),&quot;2021c 09v 3d&quot;);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_yvd</span>(<span class="ident">year</span>: <span class="ident">i32</span>, <span class="ident">veek</span>: <span class="ident">i32</span>, <span class="ident">day</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_yvd</span>(<span class="ident">year</span>: <span class="ident">u32</span>, <span class="ident">veek</span>: <span class="ident">u32</span>, <span class="ident">day</span>: <span class="ident">u32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">if</span> <span class="ident">year</span> <span class="op">&lt;</span> <span class="number">1000</span> <span class="op">|</span><span class="op">|</span> <span class="ident">year</span> <span class="op">&gt;</span> <span class="number">9999</span> <span class="op">|</span><span class="op">|</span> <span class="ident">veek</span> <span class="op">&lt;</span> <span class="number">1</span> <span class="op">|</span><span class="op">|</span> <span class="ident">veek</span> <span class="op">&gt;</span> <span class="number">53</span> <span class="op">|</span><span class="op">|</span> <span class="ident">day</span> <span class="op">&lt;</span> <span class="number">1</span> <span class="op">|</span><span class="op">|</span> <span class="ident">day</span> <span class="op">&gt;</span> <span class="number">7</span> {
             <span class="kw">return</span> <span class="prelude-val">None</span>;
         }
@@ -241,9 +241,9 @@
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_year_ordinal_day(2021,45).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.to_string(),&quot;2021c 07v 3d&quot;);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_year_ordinal_day</span>(<span class="ident">year</span>: <span class="ident">i32</span>, <span class="ident">ordinal_day</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
-        <span class="kw">let</span> <span class="ident">veek</span> <span class="op">=</span> ((<span class="ident">ordinal_day</span> <span class="kw">as</span> <span class="ident">f64</span> <span class="op">-</span> <span class="number">0.1</span>) <span class="op">/</span> <span class="number">7.0</span>).<span class="ident">floor</span>() <span class="kw">as</span> <span class="ident">i32</span> <span class="op">+</span> <span class="number">1</span>;
-        <span class="kw">let</span> <span class="ident">day</span> <span class="op">=</span> ((<span class="ident">ordinal_day</span> <span class="kw">as</span> <span class="ident">f64</span> <span class="op">-</span> <span class="number">0.1</span>) <span class="op">%</span> <span class="number">7.0</span>).<span class="ident">round</span>() <span class="kw">as</span> <span class="ident">i32</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_year_ordinal_day</span>(<span class="ident">year</span>: <span class="ident">u32</span>, <span class="ident">ordinal_day</span>: <span class="ident">u32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">let</span> <span class="ident">veek</span> <span class="op">=</span> ((<span class="ident">ordinal_day</span> <span class="kw">as</span> <span class="ident">f64</span> <span class="op">-</span> <span class="number">0.1</span>) <span class="op">/</span> <span class="number">7.0</span>).<span class="ident">floor</span>() <span class="kw">as</span> <span class="ident">u32</span> <span class="op">+</span> <span class="number">1</span>;
+        <span class="kw">let</span> <span class="ident">day</span> <span class="op">=</span> ((<span class="ident">ordinal_day</span> <span class="kw">as</span> <span class="ident">f64</span> <span class="op">-</span> <span class="number">0.1</span>) <span class="op">%</span> <span class="number">7.0</span>).<span class="ident">round</span>() <span class="kw">as</span> <span class="ident">u32</span>;
         <span class="comment">// return</span>
         <span class="self">Self</span>::<span class="ident">from_yvd</span>(<span class="ident">year</span>, <span class="ident">veek</span>, <span class="ident">day</span>)
     }
@@ -258,7 +258,7 @@
     <span class="doccomment">/// ```</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_naive_date</span>(<span class="ident">nd</span>: <span class="ident">chrono</span>::<span class="ident">NaiveDate</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="comment">// return</span>
-        <span class="self">Self</span>::<span class="ident">from_year_ordinal_day</span>(<span class="ident">nd</span>.<span class="ident">year</span>(), <span class="ident">nd</span>.<span class="ident">ordinal</span>() <span class="kw">as</span> <span class="ident">i32</span>)
+        <span class="self">Self</span>::<span class="ident">from_year_ordinal_day</span>(<span class="ident">nd</span>.<span class="ident">year</span>() <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">nd</span>.<span class="ident">ordinal</span>() <span class="kw">as</span> <span class="ident">u32</span>)
     }
 
     <span class="doccomment">/// constructor from year, month, day</span>
@@ -268,8 +268,8 @@
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_ymd(2021,02,28).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.to_string(),&quot;2021c 09v 3d&quot;);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_ymd</span>(<span class="ident">year</span>: <span class="ident">i32</span>, <span class="ident">month</span>: <span class="ident">i32</span>, <span class="ident">day</span>: <span class="ident">i32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
-        <span class="kw">match</span> <span class="ident">chrono</span>::<span class="ident">NaiveDate</span>::<span class="ident">from_ymd_opt</span>(<span class="ident">year</span>, <span class="ident">month</span> <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">day</span> <span class="kw">as</span> <span class="ident">u32</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">from_ymd</span>(<span class="ident">year</span>: <span class="ident">u32</span>, <span class="ident">month</span>: <span class="ident">u32</span>, <span class="ident">day</span>: <span class="ident">u32</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">match</span> <span class="ident">chrono</span>::<span class="ident">NaiveDate</span>::<span class="ident">from_ymd_opt</span>(<span class="ident">year</span> <span class="kw">as</span> <span class="ident">i32</span>, <span class="ident">month</span> <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">day</span> <span class="kw">as</span> <span class="ident">u32</span>) {
             <span class="comment">// return</span>
             <span class="prelude-val">Some</span>(<span class="ident">nd</span>) <span class="op">=</span><span class="op">&gt;</span> <span class="self">Self</span>::<span class="ident">from_naive_date</span>(<span class="ident">nd</span>),
             <span class="prelude-val">None</span> <span class="op">=</span><span class="op">&gt;</span> <span class="prelude-val">None</span>,
@@ -288,17 +288,17 @@
         <span class="kw">if</span> <span class="ident">s</span>.<span class="ident">len</span>() <span class="op">!</span><span class="op">=</span> <span class="number">12</span> {
             <span class="kw">return</span> <span class="prelude-val">None</span>;
         };
-        <span class="kw">let</span> <span class="ident">year</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">0</span>..<span class="number">4</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
+        <span class="kw">let</span> <span class="ident">year</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">0</span>..<span class="number">4</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
         <span class="kw">let</span> <span class="ident">year_unit</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">4</span>..<span class="number">6</span>)<span class="question-mark">?</span>;
         <span class="kw">if</span> <span class="ident">year_unit</span> <span class="op">!</span><span class="op">=</span> <span class="string">&quot;c &quot;</span> {
             <span class="kw">return</span> <span class="prelude-val">None</span>;
         };
-        <span class="kw">let</span> <span class="ident">veek</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">6</span>..<span class="number">8</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
+        <span class="kw">let</span> <span class="ident">veek</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">6</span>..<span class="number">8</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
         <span class="kw">let</span> <span class="ident">veek_unit</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">8</span>..<span class="number">10</span>)<span class="question-mark">?</span>;
         <span class="kw">if</span> <span class="ident">veek_unit</span> <span class="op">!</span><span class="op">=</span> <span class="string">&quot;v &quot;</span> {
             <span class="kw">return</span> <span class="prelude-val">None</span>;
         };
-        <span class="kw">let</span> <span class="ident">day</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">10</span>..<span class="number">11</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">i32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
+        <span class="kw">let</span> <span class="ident">day</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">10</span>..<span class="number">11</span>)<span class="question-mark">?</span>.<span class="ident">parse</span>::<span class="op">&lt;</span><span class="ident">u32</span><span class="op">&gt;</span>().<span class="ident">ok</span>()<span class="question-mark">?</span>;
         <span class="kw">let</span> <span class="ident">day_unit</span> <span class="op">=</span> <span class="ident">s</span>.<span class="ident">get</span>(<span class="number">11</span>..<span class="number">12</span>)<span class="question-mark">?</span>;
         <span class="kw">if</span> <span class="ident">day_unit</span> <span class="op">!</span><span class="op">=</span> <span class="string">&quot;d&quot;</span> {
             <span class="kw">return</span> <span class="prelude-val">None</span>;
@@ -307,34 +307,34 @@
         <span class="self">Self</span>::<span class="ident">from_yvd</span>(<span class="ident">year</span>, <span class="ident">veek</span>, <span class="ident">day</span>)
     }
 
-    <span class="doccomment">/// getter year i32</span>
+    <span class="doccomment">/// getter year u32</span>
     <span class="doccomment">/// # Example</span>
     <span class="doccomment">/// ```</span>
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_str(&quot;2021c 09v 3d&quot;).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.year(),2021);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">year</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">year</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
         <span class="comment">// return</span>
         <span class="self">self</span>.<span class="ident">year</span>
     }
-    <span class="doccomment">/// getter veek i32</span>
+    <span class="doccomment">/// getter veek u32</span>
     <span class="doccomment">/// # Example</span>
     <span class="doccomment">/// ```</span>
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_str(&quot;2021c 09v 3d&quot;).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.veek(),9);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">veek</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">veek</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
         <span class="comment">// return</span>
         <span class="self">self</span>.<span class="ident">veek</span>
     }
 
-    <span class="doccomment">/// getter day i32</span>
+    <span class="doccomment">/// getter day u32</span>
     <span class="doccomment">/// # Example</span>
     <span class="doccomment">/// ```</span>
     <span class="doccomment">/// let veeks = veeks_millis::VeekDate::from_str(&quot;2021c 09v 3d&quot;).unwrap();</span>
     <span class="doccomment">/// assert_eq!(veeks.day(),3);</span>
     <span class="doccomment">/// ```</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">day</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">i32</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">day</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
         <span class="comment">// return</span>
         <span class="self">self</span>.<span class="ident">day</span>
     }
@@ -350,7 +350,7 @@
     <span class="doccomment">/// ```</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_naive_date</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">chrono</span>::<span class="ident">NaiveDate</span><span class="op">&gt;</span> {
         <span class="comment">// return</span>
-        <span class="ident">chrono</span>::<span class="ident">NaiveDate</span>::<span class="ident">from_yo_opt</span>(<span class="self">self</span>.<span class="ident">year</span>, ((<span class="self">self</span>.<span class="ident">veek</span> <span class="op">-</span> <span class="number">1</span>) <span class="op">*</span> <span class="number">7</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">day</span>) <span class="kw">as</span> <span class="ident">u32</span>)
+        <span class="ident">chrono</span>::<span class="ident">NaiveDate</span>::<span class="ident">from_yo_opt</span>(<span class="self">self</span>.<span class="ident">year</span> <span class="kw">as</span> <span class="ident">i32</span>, ((<span class="self">self</span>.<span class="ident">veek</span> <span class="op">-</span> <span class="number">1</span>) <span class="op">*</span> <span class="number">7</span> <span class="op">+</span> <span class="self">self</span>.<span class="ident">day</span>) <span class="kw">as</span> <span class="ident">u32</span>)
     }
 }
 

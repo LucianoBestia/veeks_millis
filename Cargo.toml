@@ -1,6 +1,6 @@
 [package]
 name = "veeks_millis"
-version = "0.5.11"
+version = "1.0.2"
 authors = ["Luciano Bestia <Luciano.Bestia@gmail.com>"]
 edition = "2018"
 description = "2021 new date time units and formats: veeks and millis"

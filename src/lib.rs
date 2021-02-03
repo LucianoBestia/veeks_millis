@@ -2,7 +2,7 @@
 //! # veeks_millis
 //!
 //! **2021 new date time units and formats: veeks and millis**  
-//! ***[repo](https://github.com/LucianoBestia/veeks_millis); version: 0.5.6  date: 2021-02-03 authors: Luciano Bestia***  
+//! ***[repo](https://github.com/LucianoBestia/veeks_millis); version: 1.0.2  date: 2021-02-03 authors: Luciano Bestia***  
 //!
 //!  [![crates.io](https://meritbadge.herokuapp.com/veeks_millis)](https://crates.io/crates/veeks_millis) [![Documentation](https://docs.rs/veeks_millis/badge.svg)](https://docs.rs/veeks_millis/) [![crev reviews](https://web.crev.dev/rust-reviews/badge/crev_count/veeks_millis.svg)](https://web.crev.dev/rust-reviews/crate/veeks_millis/) [![RustActions](https://github.com/LucianoBestia/veeks_millis/workflows/rust/badge.svg)](https://github.com/LucianoBestia/veeks_millis/) [![latest doc](https://img.shields.io/badge/latest_docs-GitHub-orange.svg)](https://lucianobestia.github.io/veeks_millis/veeks_millis/index.html) [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/veeks_millis/blob/master/LICENSE)
 //!
