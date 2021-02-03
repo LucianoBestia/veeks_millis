@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["VeekDate","veek_date format is fixed and global: 4 digit year has the unit c for CE common era, one space 2 digit for veek (very similar to week) from 01v to 53v, has unit v, one space 1 digit for veek-day from 1d (monday) to 7d(sunday) example: `2021c 53v 7d`  "]]});

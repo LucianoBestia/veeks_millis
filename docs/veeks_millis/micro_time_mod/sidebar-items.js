@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["MicroTime","micro_time format with decimals: `12.34μd`, decimal digits, no space, suffix `μd`"]]});

@@ -59,36 +59,42 @@
 <span id="56">56</span>
 <span id="57">57</span>
 <span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
 </pre><div class="example-wrap"><pre class="rust ">
 <span class="comment">// region: lmake_md_to_doc_comments include README.md A //!</span>
 <span class="doccomment">//! # veeks_millis</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! **2021 new date time units and formats: veeks and millis**  </span>
-<span class="doccomment">//! ***[repo](https://github.com/LucianoBestia/veeks_millis); version: 0.5.5  date: 2021-02-02 authors: Luciano Bestia***  </span>
+<span class="doccomment">//! ***[repo](https://github.com/LucianoBestia/veeks_millis); version: 0.5.6  date: 2021-02-03 authors: Luciano Bestia***  </span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//!  [![crates.io](https://meritbadge.herokuapp.com/veeks_millis)](https://crates.io/crates/veeks_millis) [![Documentation](https://docs.rs/veeks_millis/badge.svg)](https://docs.rs/veeks_millis/) [![crev reviews](https://web.crev.dev/rust-reviews/badge/crev_count/veeks_millis.svg)](https://web.crev.dev/rust-reviews/crate/veeks_millis/) [![RustActions](https://github.com/LucianoBestia/veeks_millis/workflows/rust/badge.svg)](https://github.com/LucianoBestia/veeks_millis/) [![latest doc](https://img.shields.io/badge/latest_docs-GitHub-orange.svg)](https://lucianobestia.github.io/veeks_millis/veeks_millis/index.html) [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/LucianoBestia/veeks_millis/blob/master/LICENSE)</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//! [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-79-green.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
-<span class="doccomment">//! [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-142-blue.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
-<span class="doccomment">//! [![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-11-purple.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
+<span class="doccomment">//! [![Lines in Rust code](https://img.shields.io/badge/Lines_in_Rust-177-green.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
+<span class="doccomment">//! [![Lines in Doc comments](https://img.shields.io/badge/Lines_in_Doc_comments-206-blue.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
+<span class="doccomment">//! [![Lines in Comments](https://img.shields.io/badge/Lines_in_comments-29-purple.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
 <span class="doccomment">//! [![Lines in examples](https://img.shields.io/badge/Lines_in_examples-0-yellow.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
-<span class="doccomment">//! [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-88-orange.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
+<span class="doccomment">//! [![Lines in tests](https://img.shields.io/badge/Lines_in_tests-100-orange.svg)](https://github.com/LucianoBestia/veeks_millis/)</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! ## Proposal for a new date and time units and formats</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! Veeks and millis are my suggestion for new date-time units and formats.  </span>
-<span class="doccomment">//! Here is a long read about the date-time reform proposal:  </span>
+<span class="doccomment">//! Here is a long read TL;DR about the date-time reform proposal:  </span>
 <span class="doccomment">//! &lt;https://github.com/LucianoBestia/new_date_time_units_and_formats/&gt;</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! A super short explanation:  </span>
+<span class="doccomment">//! Years (beginning and end) remain the same as in the CE - common era calendar.  </span>
 <span class="doccomment">//! Months are obsolete and they are not used in the new format.  </span>
-<span class="doccomment">//! Years remain the same.  </span>
 <span class="doccomment">//! Veek is similar to week. One year has 52 full veeks with 7 days.  </span>
 <span class="doccomment">//! The exception is the last 53rd veek that has only 1 celebration day. For leap years there are 2 celebration days.  </span>
 <span class="doccomment">//! The new year always starts with `01v 1d` - short pronunciation one-vee one-dee. Basically every year starts with a monday.  </span>
 <span class="doccomment">//! Veek-days are similar to week-days, but without names. They use just numbers and the `d` unit.  </span>
 <span class="doccomment">//! `1d` is the new name for Monday and `7d` is the new name for Sunday.  </span>
-<span class="doccomment">//! The veek-date format is global for every language and looks exactly like this: `2021c 52v 2d`  </span>
+<span class="doccomment">//! The veek_date format is global for every language and looks exactly like this:  </span>
+<span class="doccomment">//! `2021c 52v 2d`  </span>
 <span class="doccomment">//! The year must have 4 digits from 1000c to 9999c. The unit `c` stands for CE - common era. Space.  </span>
 <span class="doccomment">//! The veek must have 2 digits from 01v to 53v. The unit `v` stands for veek. Space.  </span>
 <span class="doccomment">//! The day must have 1 digit from 1d to 7d. The unit `d` stands for day. End.  </span>
@@ -115,8 +121,12 @@
 <span class="doccomment">//!</span>
 <span class="comment">// endregion: lmake_md_to_doc_comments include README.md A //!</span>
 
-<span class="kw">mod</span> <span class="ident">veeks_millis_mod</span>;
+<span class="kw">mod</span> <span class="ident">micro_time_mod</span>;
+<span class="kw">mod</span> <span class="ident">milli_time_mod</span>;
+<span class="kw">mod</span> <span class="ident">veek_date_mod</span>;
 
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">veeks_millis_mod</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">micro_time_mod</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">milli_time_mod</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">veek_date_mod</span>::<span class="kw-2">*</span>;
 </pre></div>
 </section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../";window.currentCrate = "veeks_millis";</script><script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script><script defer src="../../search-index.js"></script></body></html>

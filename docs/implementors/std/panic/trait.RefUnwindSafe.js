@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["veeks_millis"] = [{"text":"impl RefUnwindSafe for MicroTime","synthetic":true,"types":[]},{"text":"impl RefUnwindSafe for MilliTime","synthetic":true,"types":[]},{"text":"impl RefUnwindSafe for VeekDate","synthetic":true,"types":[]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
