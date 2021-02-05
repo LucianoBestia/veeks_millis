@@ -50,7 +50,9 @@ It is dependent on the crate `chrono` for `NaiveDate` and `NaiveTime`.
 
 ## Used in projects
 
+PWA wasm converter and lengthy explanation:  
 <https://github.com/LucianoBestia/new_date_time_units_and_formats/>  
+PWA wasm clock:  
 <https://github.com/LucianoBestia/veeks_millis_clock>  
 
 ## cargo crev reviews and advisory
