@@ -54,6 +54,7 @@ PWA wasm converter and lengthy explanation:
 <https://github.com/LucianoBestia/new_date_time_units_and_formats/>  
 PWA wasm clock:  
 <https://github.com/LucianoBestia/veeks_millis_clock>  
+![screenshot](https://github.com/LucianoBestia/veeks_millis_clock/raw/main/images/compare_clocks.png)
 
 ## cargo crev reviews and advisory
 
